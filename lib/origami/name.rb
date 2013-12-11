@@ -23,31 +23,6 @@
 
 =end
 
-if RUBY_VERSION < '1.9'
-  class EmptySymbol
-    def ==(sym)
-      sym.is_a?(EmptySymbol)
-    end
-
-    def id2name
-      ""
-    end
-    alias to_s id2name
-
-    def to_sym
-      self
-    end
-
-    def to_o
-      Name.new("")
-    end
-
-    def inspect
-      ":"
-    end
-  end
-end
-
 module Origami
 
   REGULARCHARS = "([^ \\t\\r\\n\\0\\[\\]<>()%\\/]|#[a-fA-F0-9][a-fA-F0-9])*" #:nodoc:
@@ -81,14 +56,8 @@ module Origami
       super()
     end
 
-    if RUBY_VERSION < '1.9'
-      def value   
-        ( @value.empty? ) ? EmptySymbol.new : @value.to_sym
-      end
-    else
-      def value   
-        @value.to_sym
-      end
+    def value
+      @value.to_sym
     end
 
     def ==(object) #:nodoc:

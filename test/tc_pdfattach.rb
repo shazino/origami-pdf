@@ -1,24 +1,19 @@
-require 'test/unit'
+require 'test_helper'
 require 'stringio'
 
-  class TC_PdfAttach < Test::Unit::TestCase
-    def setup
-      @target = PDF.new
-      @attachment = "test/dataset/test.dummycrt"
-      @output = StringIO.new
-    end
+class TC_PdfAttach < Minitest::Test
+  def setup
+    @target = PDF.new
+    @attachment = "test/dataset/test.dummycrt"
+    @output = StringIO.new
+  end
 
-    # def teardown
-    # end
+  # def teardown
+  # end
 
-    def test_attachfile
-      assert_nothing_raised do
-        fspec = @target.attach_file(@attachment, :EmbeddedName => "foo.bar")
-      end
-
-      assert_nothing_raised do
-        @target.save(@output)
-      end
-    end
+  def test_attachfile
+    fspec = @target.attach_file(@attachment, :EmbeddedName => "foo.bar")
+    @target.save(@output)
+  end
 
 end

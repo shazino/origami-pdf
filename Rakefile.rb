@@ -25,7 +25,6 @@ DESC
 
   s.require_path      = "lib"
   s.has_rdoc          = true
-  s.test_file         = "test/ts_pdf.rb"
   s.requirements      = "ruby-gtk2 if you plan to run the PDF Walker interface"
 
   s.bindir            = "bin"
@@ -52,7 +51,7 @@ desc "Run the test suite"
 Rake::TestTask.new do |t|
  t.verbose = true
  t.libs << "test" 
- t.test_files = FileList["test/ts_pdf.rb"]
+ t.test_files = FileList["test/**/tc_*.rb"]
 end
 
 task :clean do

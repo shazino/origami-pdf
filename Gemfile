@@ -1,10 +1,11 @@
-source "http://gems.mobme.in"
-source :rubygems
+source 'http://gems.mobme.in'
+source 'https://rubygems.org'
 
 group :development do
 
-  gem 'rspec'
+  gem 'minitest'
   gem 'cucumber'
   gem 'mobile-express-valimo-signature-api-wrapper'
+  gem 'rake'
 
 end

@@ -19,6 +19,7 @@
 
 =end
 
+require 'origami/core_ext'
 require 'origami/object'
 require 'origami/null'
 require 'origami/name'
