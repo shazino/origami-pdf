@@ -1,6 +1,6 @@
-## Name
+## Origami [![Build Status](https://travis-ci.org/shazino/origami-pdf.png?branch=master)](https://travis-ci.org/shazino/origami-pdf)
 
-Origami - Extended
+This is a fork of the original [origami-pdf](https://github.com/mobmewireless/origami-pdf) gem, intended for contemporary use.
 
 ## Author
 
